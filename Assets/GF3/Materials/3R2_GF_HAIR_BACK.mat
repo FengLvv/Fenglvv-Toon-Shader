@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 3R2_GF_HAIR_BACK
+  m_Shader: {fileID: 4800000, guid: 1733135eb751fcf4297f79ed46bfc18b, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _HAIR
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: 979a173236a73054cb87120679108190, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlowMap:
+        m_Texture: {fileID: 2800000, guid: f784d2710d91d3d4d92ca663ed213cab, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HairBias:
+        m_Texture: {fileID: 2800000, guid: bef71a6e1be303a419ff3f8aff539b55, type: 3}
+        m_Scale: {x: 4.43, y: 1}
+        m_Offset: {x: 5.36, y: 0}
+    - _HairSpecularMap:
+        m_Texture: {fileID: 2800000, guid: 36c809ec9d68b05458a21e00f4c91433, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Ramp:
+        m_Texture: {fileID: 2800000, guid: aedfb7abf1995b2499a1b11863c78013, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Skybox:
+        m_Texture: {fileID: 8900000, guid: d8cbb949acc44994092ade29c85ef7e3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BiasScale: 0.08
+    - _ColorAdjust: 1
+    - _DichotomyRange: 0.02
+    - _DichotomyThreshold: 0.5
+    - _DisneyDiffuseMergeRatio: 0.5
+    - _EnvDif: 0.5
+    - _EnvSpec: 0.5
+    - _FringeShadowWidth: 0.5
+    - _FrontLight: 0.5
+    - _GradiantSaturation: 0.5
+    - _MaxOutline: 0.05
+    - _Metallic: 0
+    - _Roughness: 1
+    - _ShadowDarkness: 0.5
+    - _SpecularIntensity: 3.31
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilWriteValue: 0
+    m_Colors:
+    - _FringeShadowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _GradiantColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ShadowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecularColor: {r: 0.6930847, g: 0.7598228, b: 0.8396226, a: 1}
+  m_BuildTextureStacks: []

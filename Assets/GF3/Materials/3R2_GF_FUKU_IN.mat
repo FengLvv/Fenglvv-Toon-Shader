@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 3R2_GF_FUKU_IN
+  m_Shader: {fileID: 4800000, guid: 3ff754afb8622c2449dbcac27349c1fb, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _PBR
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: b5039400cd0b9984888c7f94814d2678, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FaceSDFMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 2800000, guid: 2d7bca0d340f93548968d65482941ef6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RMO:
+        m_Texture: {fileID: 2800000, guid: 3e07f4b16e8117d47b064b07a1befb84, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Ramp:
+        m_Texture: {fileID: 2800000, guid: 36f48ccd51faa424398ddb9f4d54c2e3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Ramp2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Skybox:
+        m_Texture: {fileID: 8900000, guid: d8cbb949acc44994092ade29c85ef7e3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AOIntensity: 0.5
+    - _CHANGEOUTLINE: 1
+    - _ColorAdjust: 1
+    - _DichotomyRange: 0.02
+    - _DichotomyThreshold: 0.5
+    - _DisneyDiffuseMergeRatio: 0.5
+    - _EnvDif: 0.5
+    - _EnvSpec: 0.5
+    - _FringeShadowWidth: 0.5
+    - _FrontLight: 0.5
+    - _GlossyExp: 10
+    - _GradiantSaturation: 0.5
+    - _HonmuraLine: 0.5
+    - _InnerLine: 0.5
+    - _MaxOutline: 0.05
+    - _OutlineWidth: 0.01
+    - _PBREven: 0.5
+    - _PBRMergeRatio: 0.5
+    - _Part: 0
+    - _Rim: 0.5
+    - _RimIntensity: 1
+    - _ShadowDarkness: 0.5
+    - _ShadowRim: 0.5
+    - _SpecularIntensity: 1
+    - _StencilOp: 0
+    - _StencilWriteValue: 0
+    m_Colors:
+    - _FringeShadowColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GradiantColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ShadowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
