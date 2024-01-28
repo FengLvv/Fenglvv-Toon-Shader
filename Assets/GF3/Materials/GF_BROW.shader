@@ -7,7 +7,6 @@ Shader "3R2/GF/BROW"
         [MainTexture] [NoScaleOffset] _BaseMap ("Texture", 2D) = "white" {}
         [NoScaleOffset]_FaceSDFMap ("FaceSDFMap", 2D) = "white" {}
         [NoScaleOffset]_Ramp ("Ramp", 2D) = "white" {}
-        _Skybox ("Skybox", Cube) = "white" {}
 
         //控制效果
         [Header(ColorAdjust)]
@@ -22,6 +21,8 @@ Shader "3R2/GF/BROW"
         [HDR]_GradiantColor ("RGB:渐变颜色,W:混合渐变", Color) = (1,1,1,1)
         _EnvDif("环境漫射强度", Range(0,1)) = 0.5
         _EnvSpec("环境高光强度", Range(0,1)) = 0.5
+        _LightColorEffect("主光照颜色影响", Range(0,2)) = 1
+
 
         [Header(PBR)]
         _Roughness ("粗糙度", Range(0,1)) = 1
@@ -40,8 +41,6 @@ Shader "3R2/GF/BROW"
 
         [Header(Write stencil)]
         _StencilWriteValue("参考值", Float) = 0
-        [Enum(UnityEngine.Rendering.CompareFunction)] _StencilComp("Stencil Comparison", Float) = 0
-        [Enum(UnityEngine.Rendering.StencilOp)] _StencilOp("Stencil Operation", Float) = 0
     }
 
     HLSLINCLUDE
@@ -64,8 +63,8 @@ Shader "3R2/GF/BROW"
             Stencil
             {
                 Ref [_StencilWriteValue]
-                Comp Always
-                Pass [_StencilOp]
+                Comp LEqual
+                Pass Keep
             }
             Tags
             {
@@ -76,6 +75,6 @@ Shader "3R2/GF/BROW"
             #pragma vertex vert
             #pragma fragment frag
             ENDHLSL
-        }      
+        }
     }
 }

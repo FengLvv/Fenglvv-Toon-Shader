@@ -135,6 +135,7 @@ struct AttributeOutline {
     float4 positionOS : POSITION;
     float3 normalOS : NORMAL;
     float4 color : COLOR;
+    float4 tangentOS : TANGENT;
 };
 
 struct VaryingsOutline {

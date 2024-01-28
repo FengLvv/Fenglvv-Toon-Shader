@@ -34,8 +34,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _HairBias:
         m_Texture: {fileID: 2800000, guid: bef71a6e1be303a419ff3f8aff539b55, type: 3}
-        m_Scale: {x: 4.43, y: 1}
-        m_Offset: {x: 5.36, y: 0}
+        m_Scale: {x: 110, y: 5.3}
+        m_Offset: {x: 164.36, y: 2.73}
     - _HairSpecularMap:
         m_Texture: {fileID: 2800000, guid: 36c809ec9d68b05458a21e00f4c91433, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -50,27 +50,30 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BiasScale: 0.08
-    - _ColorAdjust: 1
-    - _DichotomyRange: 0.02
-    - _DichotomyThreshold: 0.5
-    - _DisneyDiffuseMergeRatio: 0.5
-    - _EnvDif: 0.5
-    - _EnvSpec: 0.5
+    - _BiasScale: 0.46
+    - _ColorAdjust: 0.623
+    - _DichotomyRange: 0.033
+    - _DichotomyThreshold: 0.177
+    - _DisneyDiffuseMergeRatio: 0.193
+    - _EnvDif: 0.382
+    - _EnvSpec: 0.137
     - _FringeShadowWidth: 0.5
-    - _FrontLight: 0.5
-    - _GradiantSaturation: 0.5
+    - _FrontLight: 0.863
+    - _GradiantSaturation: 1.52
     - _MaxOutline: 0.05
-    - _Metallic: 0
-    - _Roughness: 1
-    - _ShadowDarkness: 0.5
-    - _SpecularIntensity: 3.31
+    - _Metallic: 0.236
+    - _Roughness: 0.252
+    - _ShadowDarkness: 0.276
+    - _SpecularIntensity: 0.3
     - _StencilComp: 8
     - _StencilOp: 0
     - _StencilWriteValue: 0
     m_Colors:
     - _FringeShadowColor: {r: 1, g: 1, b: 1, a: 1}
-    - _GradiantColor: {r: 1, g: 1, b: 1, a: 1}
+    - _GradiantColor: {r: 2.1159735, g: 2.1159735, b: 2.1159735, a: 0.22745098}
+    - _HairCol: {r: 1.2283189, g: 0.9848053, b: 0.5851897, a: 1}
+    - _HairCol1: {r: 1.3056108, g: 0.6374091, b: 0.48652476, a: 0.9019608}
+    - _HairCol2: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecularColor: {r: 0.6930847, g: 0.7598228, b: 0.8396226, a: 1}
+    - _SpecularColor: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
   m_BuildTextureStacks: []

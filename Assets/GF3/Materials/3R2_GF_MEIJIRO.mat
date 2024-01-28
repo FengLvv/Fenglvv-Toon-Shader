@@ -50,25 +50,28 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaTestToggle: 0
     - _CHANGEOUTLINE: 1
     - _ColorAdjust: 1
     - _DichotomyRange: 0.02
     - _DichotomyThreshold: 0.5
-    - _DisneyDiffuseMergeRatio: 0.5
-    - _EnvDif: 0.5
-    - _EnvSpec: 0.5
+    - _DisneyDiffuseMergeRatio: 0.497
+    - _EnvDif: 0.36
+    - _EnvSpec: 0.649
     - _FrontLight: 1
     - _GradiantSaturation: 0.5
+    - _LightColorEffect: 1.06
     - _MaxOutline: 0.05
     - _Metallic: 0
     - _Roughness: 1
-    - _ShadowDarkness: 0.5
-    - _SpecularIntensity: 1
+    - _ShadowDarkness: 0.526
+    - _SpecularIntensity: 0
     - _StencilComp: 8
     - _StencilOp: 2
     - _StencilWriteValue: 251
     - _ZTest: 4
     m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _GradiantColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}

@@ -27,7 +27,8 @@ public class DrawFringeFeature : ScriptableRendererFeature {
 		RTHandle _cameraColorTexture;
 		ShaderTagId shaderTagFringe;
 		ShaderTagId shaderTagBrow;
-		ShaderTagId shaderTagLine;
+		ShaderTagId shaderTagAll;
+		ShaderTagId shaderTagOutline;
 
 
 		public Setting setting;
@@ -38,10 +39,16 @@ public class DrawFringeFeature : ScriptableRendererFeature {
 			this.setting = setting;
 			shaderTagFringe = new ShaderTagId( setting.FringeTagName );
 			shaderTagBrow = new ShaderTagId( setting.BrowTagName );
-			shaderTagLine = new ShaderTagId( "UniversalForward" );
+			shaderTagAll = new ShaderTagId( "UniversalForward" );
+			shaderTagOutline = new ShaderTagId( "Outline" );
 		}
 
 		public override void Execute( ScriptableRenderContext context, ref RenderingData renderingData ) {
+			//如果再game视图下
+			if( renderingData.cameraData.cameraType != CameraType.Game ) {
+				return;
+			}
+			
 			//新建filter,只渲染人物层
 			RenderQueueRange queue = new RenderQueueRange();
 			queue.lowerBound = RenderQueueRange.opaque.lowerBound;
@@ -53,19 +60,19 @@ public class DrawFringeFeature : ScriptableRendererFeature {
 			FilteringSettings filteringBrow = new FilteringSettings( queue, setting.BrowLayer );
 
 			Shader.SetGlobalFloat( OutlineWidth, setting.outlineWidth );
-			DrawingSettings drawOutline = CreateDrawingSettings( shaderTagLine, ref renderingData, renderingData.cameraData.defaultOpaqueSortFlags );
+			DrawingSettings drawOutline = CreateDrawingSettings( shaderTagOutline, ref renderingData, renderingData.cameraData.defaultOpaqueSortFlags );
 			drawOutline.overrideShader = setting.outlineShader;
 			FilteringSettings filteringOutline = new FilteringSettings( queue, setting.OutlineLayer );
 
 			Shader.SetGlobalFloat( InlineWidth, setting.inlineWidth );
-			DrawingSettings drawInline = CreateDrawingSettings( shaderTagLine, ref renderingData, renderingData.cameraData.defaultOpaqueSortFlags );
+			DrawingSettings drawInline = CreateDrawingSettings( shaderTagOutline, ref renderingData, renderingData.cameraData.defaultOpaqueSortFlags );
 			drawInline.overrideShader = setting.inlineShader;
 			FilteringSettings filteringInline = new FilteringSettings( queue, setting.InlineLayer );
 
 
 			context.DrawRenderers( renderingData.cullResults, ref drawInline, ref filteringInline );
-			context.DrawRenderers( renderingData.cullResults, ref drawOutline, ref filteringOutline );
 			context.DrawRenderers( renderingData.cullResults, ref drawFringe, ref filteringFringe );
+			context.DrawRenderers( renderingData.cullResults, ref drawOutline, ref filteringOutline );
 			context.DrawRenderers( renderingData.cullResults, ref drawBrow, ref filteringBrow );
 
 		}

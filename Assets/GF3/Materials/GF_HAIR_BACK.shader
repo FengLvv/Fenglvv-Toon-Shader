@@ -6,10 +6,11 @@ Shader "3R2/GF/HAIR/BACK"
         [Header(Texture)]
         [MainTexture] [NoScaleOffset] _BaseMap ("Texture", 2D) = "white" {}
         [NoScaleOffset]_FlowMap ("头发高光", 2D) = "white" {}
-        _HairBias ("头发纹理", 2D) = "white" {}        
-        _BiasScale ("头发纹理强度", Range(0,3)) = 2        
+        _HairBias ("头发纹理", 2D) = "white" {}
+        _BiasScale ("头发纹理强度", Range(0,3)) = 2
         [NoScaleOffset]_Ramp ("Ramp", 2D) = "white" {}
-        _Skybox ("Skybox", Cube) = "white" {}
+        [HDR] _HairCol ("头发过渡层颜色", Color) = (1,1,1,1)
+
 
         //控制效果
         [Header(ColorAdjust)]
@@ -21,9 +22,10 @@ Shader "3R2/GF/HAIR/BACK"
         _ShadowDarkness ("阴影明度", Range(0,1)) = 0.5
         _ShadowColor ("阴影颜色", Color) = (1,1,1,1)
         _GradiantSaturation ("渐变纯度", Range(0,2)) = 0.5
-         [HDR]_GradiantColor ("RGB:渐变颜色,W:混合渐变", Color) = (1,1,1,1)
+        [HDR]_GradiantColor ("RGB:渐变颜色,W:混合渐变", Color) = (1,1,1,1)
         _EnvDif("环境漫射强度", Range(0,1)) = 0.5
         _EnvSpec("环境高光强度", Range(0,1)) = 0.5
+                _LightColorEffect("主光照颜色影响", Range(0,2)) = 1
 
         [Header(PBR)]
         _Roughness ("粗糙度", Range(0,1)) = 1
@@ -34,11 +36,14 @@ Shader "3R2/GF/HAIR/BACK"
         _SpecularIntensity ("高光强度", Range(0,10)) = 1
         _SpecularColor ("高光颜色", Color) = (1,1,1,1)
 
-        [Header(Outline)]
-        _MaxOutline ("MaxOutline", Range(0,1)) = 0.05
 
         [Header(Others)]
         _FrontLight( "前向光", Range(0,1)) = 0.5
+
+        [HideInInspector]//support shadow
+        [MainColor] _BaseColor("Base Color", Color) = (1, 1, 1, 1)        
+        [HideInInspector]//support shadow
+        [Toggle(_ALPHATEST_ON)] _AlphaTestToggle ("Alpha Clipping", Float) = 0
     }
 
     HLSLINCLUDE
@@ -51,19 +56,30 @@ Shader "3R2/GF/HAIR/BACK"
     ENDHLSL
     SubShader
     {
-        Pass
-        {      
-            Tags
+          Tags
             {
                 "RenderType"="Opaque"
                 "Queue"="Geometry"
                 "LightMode"="UniversalForward"
             }
+        Pass
+        {
+            Tags
+            {            
+                "LightMode"="UniversalForward"
+            }  
             HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
             ENDHLSL
         }
-      
+        Pass
+        {
+            Tags
+            {
+                "LightMode"="Outline"
+            }
+        }
+        UsePass "Universal Render Pipeline/Lit/ShadowCaster"       
     }
 }

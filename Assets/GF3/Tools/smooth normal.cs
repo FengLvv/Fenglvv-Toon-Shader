@@ -167,6 +167,23 @@ public class SmoothNormalTools : EditorWindow
     {
         dest.Clear();
         dest.vertices = src.vertices;
+        
+        //set blend shape of dest mesh
+        for (int i = 0; i < src.blendShapeCount; i++)
+        {
+            string shapeName = src.GetBlendShapeName(i);
+            int frameCount = src.GetBlendShapeFrameCount(i);
+            for (int j = 0; j < frameCount; j++)
+            {
+                float frameWeight = src.GetBlendShapeFrameWeight(i, j);
+                Vector3[] deltaVertices = new Vector3[src.vertexCount];
+                Vector3[] deltaNormals = new Vector3[src.vertexCount];
+                Vector3[] deltaTangents = new Vector3[src.vertexCount];
+                src.GetBlendShapeFrameVertices(i, j, deltaVertices, deltaNormals, deltaTangents);
+                dest.AddBlendShapeFrame(shapeName, frameWeight, deltaVertices, deltaNormals, deltaTangents);
+            }
+        }
+        
 
         List<Vector4> uvs = new List<Vector4>();
 

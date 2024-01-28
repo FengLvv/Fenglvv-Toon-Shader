@@ -42,28 +42,30 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _ColorAdjust: 1
-    - _DichotomyRange: 0.0165
-    - _DichotomyThreshold: 0.824
-    - _DisneyDiffuseMergeRatio: 0.5
+    - _AlphaTestToggle: 0
+    - _ColorAdjust: 0.783
+    - _DichotomyRange: 0.0078
+    - _DichotomyThreshold: 0.56
+    - _DisneyDiffuseMergeRatio: 0.132
     - _EnvDif: 0.29
     - _EnvSpec: 0.522
-    - _FringeShadowWidth: 0.265
-    - _FrontLight: 0.5
-    - _GradiantSaturation: 0
+    - _FringeShadowWidth: 0.641
+    - _FrontLight: 0.706
+    - _GradiantSaturation: 1.11
     - _MaxOutline: 0.05
     - _Metallic: 0
     - _Roughness: 1
-    - _ShadowDarkness: 0.572
-    - _SpecularIntensity: 1
+    - _ShadowDarkness: 0.429
+    - _SpecularIntensity: 3.92
     - _StencilComp: 8
     - _StencilOp: 2
     - _StencilReadShadow: 251
     - _StencilWriteFringe: 252
     - _StencilWriteValue: 252
     m_Colors:
-    - _FringeShadowColor: {r: 0.5188679, g: 0.31975275, b: 0.28146136, a: 1}
-    - _GradiantColor: {r: 2.6390157, g: 0.50414747, b: 0, a: 1}
-    - _ShadowColor: {r: 1, g: 0, b: 0, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FringeShadowColor: {r: 0.13207543, g: 0.36036485, b: 0.5283019, a: 0.5176471}
+    - _GradiantColor: {r: 2.7002478, g: 1.5161186, b: 0.9298023, a: 0.5411765}
+    - _ShadowColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

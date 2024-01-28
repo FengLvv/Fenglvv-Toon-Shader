@@ -12,7 +12,7 @@
 #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Shadows.hlsl"
 #include "Assets/MyMaterial/Repo/PBR.hlsl"
 #include "Assets/MyMaterial/Repo/MYTOONSHADER.hlsl"
-#include "Assets/GF3/BLENDCOLOR.hlsl"
+
 
 //贴图
 TEXTURE2D(_BaseMap);
@@ -57,8 +57,9 @@ CBUFFER_START(UnityPerMaterial)
 
 
     #if defined(_HAIR)
-float4 _HairBias_ST;
-float _BiasScale;
+    float4 _HairBias_ST;
+    float _BiasScale;
+    float4 _HairCol;
     #endif
 
 
@@ -69,14 +70,21 @@ float _BiasScale;
 
     float _ColorAdjust;
     float _FrontLight;
+    #ifndef _FACE
     float _DichotomyThreshold;
     float _DichotomyRange;
+    #endif
     float _ShadowDarkness;
     float4 _ShadowColor;
-    float _GradiantSaturation;
+
     float _DisneyDiffuseMergeRatio;
 
+    #ifndef _FACE
+    float _GradiantSaturation;
     float4 _GradiantColor;
+    #endif
+float _LightColorEffect;
+
     float _EnvDif;
     float _EnvSpec;
 
@@ -143,33 +151,31 @@ half4 frag(Varyings IN) : SV_Target
     Light mainLight = GetMainLight();
     float3 lightDirWS = normalize(mainLight.direction);
     float3 lightColor = mainLight.color;
-    float3 lightAttenuation = mainLight.shadowAttenuation;
+    lightColor *= _LightColorEffect;
+    
     //相机参数
-    float3 viewDirectionWS = normalize(GetWorldSpaceNormalizeViewDir(IN.positionWS.xyz));
+    float3 viewDirectionWS = GetWorldSpaceNormalizeViewDir(IN.positionWS.xyz);
     //半向量
     float3 halfVecWS = normalize(viewDirectionWS + lightDirWS);
     //角色方向
-    float3 forwardWS = -TransformObjectToWorldDir(float3(0, 0, 1));
+    float3 forwardWS = TransformObjectToWorldDir(float3(0, 0, 1));
     float3 leftWS = TransformObjectToWorldDir(float3(1, 0, 0));
 
     float3 normalWS = IN.normalWS;
 
     #ifdef _HAIR
-    float2  flowMap = SAMPLE_TEXTURE2D(_FlowMap, sampler_FlowMap, IN.uv).rg;
+    float2 flowMap = SAMPLE_TEXTURE2D(_FlowMap, sampler_FlowMap, IN.uv).rg;
     float3 hairFlowTS = float3(0,flowMap.x ,flowMap.y);
-    hairFlowTS = normalize(float3((flowMap.x*2-1),(flowMap.y*2-1),0));
+    hairFlowTS = normalize(float3(2*(flowMap.x-0.5),2*(flowMap.y-0.5),0));
     float3 hairFlowWS = mul(hairFlowTS, matWS2TS);
-    float3 tangentWS = normalize(hairFlowWS);
+    float3 hairTangentWS = normalize(hairFlowWS);
     #endif
 
     //法线信息 
-    #if defined(_NormalMap)
+    #if defined(_PBR)
     half3 normalTS = UnpackNormal(SAMPLE_TEXTURE2D(_Normal, sampler_Normal, IN.uv));
-    float3 normalWS = mul(normalTS, matWS2TS);
-    #endif
+    normalWS = mul(normalTS, matWS2TS);
 
-
-    #if defined( _PBR)
     half4 rmo = SAMPLE_TEXTURE2D(_RMO, sampler_RMO, IN.uv);
     float roughness = rmo.r;
     float metallic = rmo.g;
@@ -178,7 +184,6 @@ half4 frag(Varyings IN) : SV_Target
     float roughness = _Roughness;
     float metallic = _Metallic;
     #endif
-
 
     /////////////////////////////////////////
     /////////////////采样贴图/////////////////
@@ -193,7 +198,6 @@ half4 frag(Varyings IN) : SV_Target
     float3 envDif = SAMPLE_TEXTURECUBE_LOD(unity_SpecCube1, samplerunity_SpecCube1, float3(00,0,0), 8).rgb;
     float3 envSpec = SAMPLE_TEXTURECUBE_LOD(unity_SpecCube1, samplerunity_SpecCube1, half3(reflect(-viewDirectionWS, normalWS)), roughness*5).rgb;
     #endif
-    //头发采样flowMap
 
 
     //////////////////////////////////////////
@@ -228,7 +232,6 @@ half4 frag(Varyings IN) : SV_Target
     /////////////////////////////////////////
     //+ 环境光
     float3 envDifCol = lerp(baseColAdjusted.rgb, envDif * baseColAdjusted.rgb, _EnvDif);
-    float3 envDifCol1 = lerp(baseColAdjusted.rgb, envDif * baseColAdjusted.rgb, _EnvDif);
 
     //+ 漫反射
     float halfLambert = dot(lightDirWS, IN.normalWS) * 0.5 + 0.5;
@@ -236,13 +239,15 @@ half4 frag(Varyings IN) : SV_Target
     #ifdef _PBR
     halfLambert = lerp(halfLambert, halfLambert * occlusion, _AOIntensity);
     #endif
-    float stepLambert = smoothstep(_DichotomyThreshold - _DichotomyRange, _DichotomyThreshold + _DichotomyRange, halfLambert);
 
+    float stepLambert = halfLambert;
     //-> - 面部SDF
     #ifdef _FACE
     float3 sdfShadowFaceSample = sampleSDF(_FaceSDFMap, sampler_FaceSDFMap, IN.uv2, lightDirWS, normalWS, forwardWS, leftWS).x;
     float sdfShadowFace=  sdfShadowFaceSample.x;
-    halfLambert =stepLambert= saturate(sdfShadowFace );  
+    halfLambert =stepLambert= saturate(sdfShadowFace );
+    #else
+    stepLambert = smoothstep(_DichotomyThreshold - _DichotomyRange, _DichotomyThreshold + _DichotomyRange, halfLambert);
     #endif
 
     //-> + ramp图：采样对应的ramp图，暗部叠加ramp，和亮部用lambert混合
@@ -254,37 +259,52 @@ half4 frag(Varyings IN) : SV_Target
     float3 diffusionColor = lerp(darkRampDiffuse, dayRampDiffuse, stepLambert);
 
     //-> + 高饱和度渐变：获取灰度，和源颜色lerp出高纯度颜色
+    float3 saturationGradiantCol = diffusionColor;
+    #ifndef _FACE
     float halfLambertGradiantPartMask = 1 * exp((-pow(halfLambert - _DichotomyThreshold, 2)) / (2 * pow(_DichotomyRange, 2)));
-    float gray = dot(envDifCol.rgb, float3(0.299, 0.587, 0.114));
-    half3 gradiantCol = lerp(gray.xxx, envDifCol, _GradiantSaturation);
+    float gray = dot(baseColAdjusted.rgb, float3(0.299, 0.587, 0.114));
+    half3 gradiantCol = lerp(gray.xxx, baseColAdjusted, _GradiantSaturation * 2);
     gradiantCol = lerp(gradiantCol, _GradiantColor.rgb, _GradiantColor.w);
-    float3 saturationGradiantCol = lerp(diffusionColor, gradiantCol, halfLambertGradiantPartMask);
+    saturationGradiantCol = lerp(diffusionColor, gradiantCol, halfLambertGradiantPartMask);
+    #endif
 
     //-> + 混合pbr颜色
-    float3 pbrDiffuseMerge = diffuseMask * lightColor * baseColor.rgb;
+    float3 pbrDiffuseMerge = diffuseMask * baseColor.rgb;
     pbrDiffuseMerge = lerp(saturationGradiantCol, pbrDiffuseMerge, _DisneyDiffuseMergeRatio);
 
-    //+ 后发和其他高光
-    float3 specCol=0;
+    //+ 高光
+    float3 specCol = pbrDiffuseMerge;
+    //-> +| 后发和其他高光
     #if defined(_HAIR)
     float hairBias = SAMPLE_TEXTURE2D(_HairBias, sampler_HairBias, IN.uv2*_HairBias_ST.xy + _HairBias_ST.zw).r * 2 - 1;
     float3 H = normalize(lightDirWS + viewDirectionWS);
-    float3 T= tangentWS+hairBias*normalWS*_BiasScale;
+    float3 T= normalize(hairTangentWS+hairBias*normalWS*_BiasScale);
     float dotTH = dot(T, H);
     float sinTH = sqrt(1.0 - dotTH*dotTH);
+    float sinTHPow1=sinTH*sinTH*sinTH*sinTH*sinTH*sinTH*sinTH*sinTH*sinTH;
+    sinTHPow1*=sinTHPow1*sinTHPow1*sinTHPow1;
     float dirAtten = smoothstep(-1.0, 0.0, dot(T, H));
-    float sinTHPow1=sinTH*sinTH*sinTH*sinTH*sinTH*sinTH;
-    sinTHPow1*=sinTHPow1*sinTHPow1*sinTHPow1*sinTHPow1;
-    float specRampMask1= dirAtten * sinTHPow1;
-    specCol= lerp(pbrDiffuseMerge, pbrDiffuseMerge + envSpec, specRampMask1);
-    
+    float specRampMask1= saturate(dirAtten * sinTHPow1);
+    specCol= lerp(pbrDiffuseMerge.xyz,pbrDiffuseMerge* _HairCol.xyz , specRampMask1);
+
     float sinTHPow2=sinTH*sinTH*sinTH*sinTH*sinTH*sinTH;
     sinTHPow2*=sinTHPow2*sinTHPow2*sinTHPow2*sinTHPow2;
     sinTHPow2*=sinTHPow2*sinTHPow2*sinTHPow2*sinTHPow2*sinTHPow2*sinTHPow2*sinTHPow2;   
     float specRampMask2= dirAtten * sinTHPow2;
     specCol += specRampMask2*lightColor*_SpecularIntensity*_SpecularColor.rgb;
+    //-> +| 前发高光
+    # elif  defined(_HAIR_FRONT)
+    float SpecOffsetValue = viewDirectionWS.y > 0 ? viewDirectionWS.y * 0.3 : viewDirectionWS.y * 1.3;
+    float3 SpecValue = SAMPLE_TEXTURE2D(_HairSpecularMap, sampler_HairSpecularMap, float2(IN.uv2.x,saturate(IN.uv2.y-SpecOffsetValue*0.05))).rgb;
+    //调整时间
+    float3 SpecColorHair = (NdotV * 0.5 + 0.5) * smoothstep(0.45, 0.55, NdotL * 0.5 + 0.5) * SpecValue.x ;
+    float2 normalHorizon = normalize(float2(normalWS.x,  normalWS.z));
+    float fresnelHorizon = dot(normalHorizon, normalize(viewDirectionWS.xz));
+    fresnelHorizon = saturate(fresnelHorizon*fresnelHorizon*fresnelHorizon*fresnelHorizon*fresnelHorizon*fresnelHorizon*fresnelHorizon*fresnelHorizon*fresnelHorizon*fresnelHorizon*fresnelHorizon  -0.3);
+    SpecColorHair = SpecColorHair * fresnelHorizon* _SpecularIntensity ;
+    specCol = pbrDiffuseMerge+ SpecColorHair;
     #else
-    //+ GGX高光
+    //-> +| GGX高光
     //高光 mask:PBR的specularMask替换 Blinn Phong
     float specRampMask = length(specularMask) * 10;
     //高光 ramp
@@ -298,27 +318,12 @@ half4 frag(Varyings IN) : SV_Target
     specCol = lightSpecCol + pbrDiffuseMerge;
     #endif
 
-
-    //+| 前发高光
-    float3 hairSpec = specCol;
-    #ifdef _HAIR_FRONT
-    float SpecOffsetValue = viewDirectionWS.y > 0 ? viewDirectionWS.y * 0.3 : viewDirectionWS.y * 1.3;
-    float3 SpecValue = SAMPLE_TEXTURE2D(_HairSpecularMap, sampler_HairSpecularMap, float2(IN.uv2.x,saturate(IN.uv2.y-SpecOffsetValue*0.05))).rgb;
-    //调整时间
-    float3 SpecColorHair = (NdotV * 0.5 + 0.5) * smoothstep(0.45, 0.55, NdotL * 0.5 + 0.5) * SpecValue.x * lightAttenuation;
-    float3 normalHorizon = float3(normalWS.x, 0, normalWS.z);
-    float fresnelHorizon = dot(normalHorizon, viewDirectionWS);
-    fresnelHorizon = saturate(pow(fresnelHorizon, 3) - 0.3);
-    SpecColorHair = SpecColorHair * fresnelHorizon;
-    hairSpec = hairSpec + SpecColorHair;
-    #endif
-
     //////////////////////////////////////////
     //////////////////前向光///////////////////
     //////////////////////////////////////////
     //叠加菲尼尔遮罩，增强立体感
     half fresnelMask = lerp(dot(viewDirectionWS, normalWS), 1, _FrontLight);
-    half3 frontLightCol = fresnelMask * hairSpec;
+    half3 frontLightCol = fresnelMask * specCol;
 
     //////////////////////////////////////////
     //////////////////多光源///////////////////
@@ -335,15 +340,27 @@ half4 frag(Varyings IN) : SV_Target
 
         float3 halfVecWS = normalize(viewDirectionWS + addLight.direction);
         float blinnPhone = mul(halfVecWS, normalWS);
-        blinnPhone*=blinnPhone*blinnPhone*blinnPhone*blinnPhone*blinnPhone;
-        blinnPhone*=blinnPhone*blinnPhone;
+        blinnPhone *= blinnPhone * blinnPhone * blinnPhone * blinnPhone * blinnPhone;
+        blinnPhone *= blinnPhone * blinnPhone;
 
-        otherLightColor += blinnPhone * eachLightColor;
-        otherLightAttenuation += blinnPhone;
-    }
-    float3 color=   max(frontLightCol , otherLightColor);
-
+        #ifndef _FACE
+            otherLightColor += blinnPhone * eachLightColor;
+            otherLightAttenuation += blinnPhone;
+        #else
+        otherLightColor+=eachLightColor*0.01;
+        #endif
+        
     
+    }
+    float3 color = lerp(otherLightColor, frontLightCol, 0.7);
+
+
+    // color=dayRampDiffuse;
+    #ifdef _FACE
+    // color=fresnelMask;
+    #endif
+
+
     OUT = half4(color.xyz, 1);
 
     return OUT;
@@ -362,14 +379,12 @@ VaryingsOutline outline_vert(AttributeOutline IN)
     float weight = 5; //以后放到color.b
 
     // 处理tangent空间的法线
-    VertexNormalInputs normals = GetVertexNormalInputs(IN.normalOS);
-    float3 normalWS = normals.normalWS;
-    float3 tangentWS = normals.tangentWS;
-    float3 bitangentWS = normals.bitangentWS;
+    float3 normalWS = TransformObjectToWorldNormal(IN.normalOS);
+    float3 tangentWS = TransformObjectToWorldDir(IN.tangentOS.xyz);
+    float3 bitangentWS =normalize( cross(normalWS, tangentWS) * IN.tangentOS.w);
+
     float3x3 matW2T = float3x3(tangentWS, bitangentWS, normalWS);
-    float3 smoothNormalTS;
-    smoothNormalTS.xy = IN.color.xy;
-    smoothNormalTS.z = IN.color.z;
+    float3 smoothNormalTS= normalize(IN.color.xyz);
 
     float3 smoothNormalWS = mul(smoothNormalTS, matW2T);
 
@@ -484,7 +499,7 @@ half4 inline_frag(VaryingsInline IN) : SV_Target
     float depthOffset = LinearEyeDepth(SAMPLE_TEXTURE2D(_CameraDepthTexture, sampler_CameraDepthTexture, screenUV).x, _ZBufferParams);
     float realDepth = -positionVS.z;
     float depthDiff = abs(depthOffset - realDepth);
-    float inlineMask = step(0.1, depthDiff);
+    float inlineMask = step(0.2, depthDiff);
 
     Light mainLight = GetMainLight();
     float lambert = saturate(dot(normalWS, mainLight.direction));
@@ -507,8 +522,7 @@ half4 inline_frag(VaryingsInline IN) : SV_Target
         blinnPhone*=blinnPhone*blinnPhone*blinnPhone*blinnPhone*blinnPhone;
 
         otherLightColor += blinnPhone * eachLightColor;
-        otherLightAttenuation += blinnPhone;    }
- 
+        otherLightAttenuation += blinnPhone;    } 
     #endif
 
     otherLightColor *= inlineMask;

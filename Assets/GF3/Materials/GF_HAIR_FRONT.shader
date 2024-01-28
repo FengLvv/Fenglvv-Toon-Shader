@@ -7,7 +7,6 @@ Shader "3R2/GF/HAIR/FRONT"
         [MainTexture] [NoScaleOffset] _BaseMap ("Texture", 2D) = "white" {}
         [NoScaleOffset]_HairSpecularMap ("头发高光", 2D) = "white" {}
         [NoScaleOffset]_Ramp ("Ramp", 2D) = "white" {}
-        _Skybox ("Skybox", Cube) = "white" {}
 
         //控制效果
         [Header(ColorAdjust)]
@@ -17,16 +16,16 @@ Shader "3R2/GF/HAIR/FRONT"
         _FringeShadowWidth ("刘海位移", Range(0,1)) = 0.5
         _FringeShadowColor ("刘海颜色", Color) = (1,1,1,1)
 
-
         [Header(Lambert)]
         _DichotomyThreshold ("二分线", Range(0,1)) = 0.5
         _DichotomyRange ("二分渐变范围", Range(0,0.05)) = 0.02
         _ShadowDarkness ("阴影明度", Range(0,1)) = 0.5
         _ShadowColor ("阴影颜色", Color) = (1,1,1,1)
         _GradiantSaturation ("渐变纯度", Range(0,2)) = 0.5
-       [HDR] _GradiantColor ("RGB:渐变颜色,W:混合渐变", Color) = (1,1,1,1)
+        [HDR] _GradiantColor ("RGB:渐变颜色,W:混合渐变", Color) = (1,1,1,1)
         _EnvDif("环境漫射强度", Range(0,1)) = 0.5
         _EnvSpec("环境高光强度", Range(0,1)) = 0.5
+        _LightColorEffect("主光照颜色影响", Range(0,2)) = 1
 
         [Header(PBR)]
         _Roughness ("粗糙度", Range(0,1)) = 1
@@ -37,9 +36,6 @@ Shader "3R2/GF/HAIR/FRONT"
         _SpecularIntensity ("高光强度", Range(0,10)) = 1
         _SpecularColor ("高光颜色", Color) = (1,1,1,1)
 
-        [Header(Outline)]
-        _MaxOutline ("MaxOutline", Range(0,1)) = 0.05
-
         [Header(Others)]
         _FrontLight( "前向光", Range(0,1)) = 0.5
 
@@ -47,7 +43,10 @@ Shader "3R2/GF/HAIR/FRONT"
         _StencilWriteFringe("刘海模板写入值", Float) = 0
         _StencilReadShadow("刘海投影模板比较值（面部模板写入值)", Float) = 0
 
-
+        [HideInInspector]//support shadow
+        [MainColor] _BaseColor("Base Color", Color) = (1, 1, 1, 1)
+        [HideInInspector]//support shadow
+        [Toggle(_ALPHATEST_ON)] _AlphaTestToggle ("Alpha Clipping", Float) = 0
     }
 
     HLSLINCLUDE
@@ -61,6 +60,12 @@ Shader "3R2/GF/HAIR/FRONT"
     ENDHLSL
     SubShader
     {
+        Tags
+        {
+            "RenderType"="Opaque"
+            "Queue"="Geometry"
+            "LightMode"="UniversalForward"
+        }
         Pass
         {
             Stencil
@@ -71,9 +76,8 @@ Shader "3R2/GF/HAIR/FRONT"
             }
             Tags
             {
-                "RenderType"="Opaque"
-                "Queue"="Geometry"
                 "LightMode"="UniversalForward"
+
             }
             HLSLPROGRAM
             #pragma vertex vert
@@ -87,8 +91,6 @@ Shader "3R2/GF/HAIR/FRONT"
             Tags
             {
                 "LightMode"="Fringe"
-                "Queue"="Geometry+1"
-                "RenderType"="Opaque"
             }
             stencil
             {
@@ -97,10 +99,19 @@ Shader "3R2/GF/HAIR/FRONT"
             }
             ZTest LEqual
             ZWrite Off
+            Blend SrcAlpha OneMinusSrcAlpha
             HLSLPROGRAM
             #pragma vertex fringe_vert
             #pragma fragment fringe_frag
             ENDHLSL
         }
+        Pass
+        {
+            Tags
+            {
+                "LightMode"="Outline"
+            }
+        }
+        UsePass "Universal Render Pipeline/Lit/ShadowCaster"
     }
 }

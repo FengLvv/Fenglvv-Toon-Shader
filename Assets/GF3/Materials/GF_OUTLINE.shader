@@ -14,7 +14,7 @@ Shader "3R2/GF/OUTLINE"
             }
             Cull Front
             ZWrite Off
-            ZTest Less
+            ZTest LEqual
             HLSLPROGRAM            
             #pragma vertex outline_vert
             #pragma fragment outline_frag            
