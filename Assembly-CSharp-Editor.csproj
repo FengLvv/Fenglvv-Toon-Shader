@@ -728,9 +728,6 @@
      <Reference Include="UnityEngine.TestRunner">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.Recorder.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Recorder.Editor.dll</HintPath>
      </Reference>
@@ -740,17 +737,59 @@
      <Reference Include="com.unity.cinemachine.editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Burst">
-     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.Burst.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Rider.Editor">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Core.Editor">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.Flow">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Mathematics.Editor">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Collections">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Collections.Editor">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Collections.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="PPv2URPConverters">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TextMeshPro">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Recorder">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VSCode.Editor">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Universal.Editor">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.EditorCoroutines.Editor">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.PlasticSCM.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
@@ -761,11 +800,11 @@
      <Reference Include="Unity.ShaderGraph.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Recorder.Base">
-     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.VisualStudio.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Recorder.Base">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
@@ -776,23 +815,11 @@
      <Reference Include="Unity.VisualScripting.Core.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Rider.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-     </Reference>
      <Reference Include="UnityEngine.UI">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.RenderPipelines.Core.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.Flow">
-     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.VisualScripting.Flow.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Mathematics.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
@@ -803,50 +830,32 @@
      <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Collections">
-     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.VisualScripting.State.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Collections.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Collections.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Mathematics">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
      </Reference>
-     <Reference Include="PPv2URPConverters">
-     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.TextMeshPro">
-     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.TextMeshPro.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Recorder">
-     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Searcher.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+     <Reference Include="Unity.InternalAPIEditorBridgeDev.001">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.InternalAPIEditorBridgeDev.001.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Universal.Shaders">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.TextMeshPro.Editor">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Searcher.Editor">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VSCode.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Cinemachine">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.RenderPipelines.Universal.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+     <Reference Include="Unity.Play.Publisher.Editor">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Play.Publisher.Editor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -866,10 +875,6 @@
       <Project>{ee52674e-214e-9f2e-4676-6a188a4f0d58}</Project>
       <Name>MagicaClothV2</Name>
     </ProjectReference>
-    <ProjectReference Include="UniTask.Linq.csproj">
-      <Project>{3940dec0-317a-1e91-50ba-d84a525d27c5}</Project>
-      <Name>UniTask.Linq</Name>
-    </ProjectReference>
     <ProjectReference Include="MagicaClothV2.Editor.csproj">
       <Project>{d3399a0a-2fac-7d85-c655-830ca4e1d8cb}</Project>
       <Name>MagicaClothV2.Editor</Name>
@@ -881,6 +886,10 @@
     <ProjectReference Include="UniTask.TextMeshPro.csproj">
       <Project>{594cd948-c636-1d71-ae18-6392169a28b2}</Project>
       <Name>UniTask.TextMeshPro</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.Linq.csproj">
+      <Project>{3940dec0-317a-1e91-50ba-d84a525d27c5}</Project>
+      <Name>UniTask.Linq</Name>
     </ProjectReference>
     <ProjectReference Include="UniTask.DOTween.csproj">
       <Project>{f2c99892-22da-cbf4-65f5-3635fef57e75}</Project>
