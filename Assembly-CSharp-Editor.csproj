@@ -867,6 +867,10 @@
       <Project>{e2e18370-b298-9aac-e928-ff8cbdf123bd}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
+      <Project>{bcd46cb8-a825-2280-c27f-a69e1c7ba07a}</Project>
+      <Name>Assembly-CSharp-Editor-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="UniTask.Addressables.csproj">
       <Project>{05b7e2e8-7810-5e62-a311-6407acfab57b}</Project>
       <Name>UniTask.Addressables</Name>
