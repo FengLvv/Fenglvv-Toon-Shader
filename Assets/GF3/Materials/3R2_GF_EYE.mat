@@ -48,7 +48,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FaceSDFMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: b074ff1a6010c0b48b99e691bd73f83c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _HairSpecularMap:
@@ -164,6 +164,8 @@ Material:
     - _EnvDif: 0.5
     - _EnvSpec: 0.5
     - _EnvironmentReflections: 1
+    - _EyeDepth: 1
+    - _EyeScale: 47.65
     - _FringeShadowWidth: 0.5
     - _GlossMapScale: 1
     - _Glossiness: 0.2236068

@@ -11,9 +11,9 @@ Material:
   m_Shader: {fileID: 4800000, guid: 1733135eb751fcf4297f79ed46bfc18b, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
+  m_ValidKeywords: []
+  m_InvalidKeywords:
   - _HAIR
-  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -50,30 +50,37 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaTestToggle: 0
     - _BiasScale: 0.46
     - _ColorAdjust: 0.623
-    - _DichotomyRange: 0.033
-    - _DichotomyThreshold: 0.177
+    - _DichotomyRange: 0.237
+    - _DichotomyThreshold: 0.716
     - _DisneyDiffuseMergeRatio: 0.193
     - _EnvDif: 0.382
+    - _EnvDistribution: 3.69
     - _EnvSpec: 0.137
     - _FringeShadowWidth: 0.5
-    - _FrontLight: 0.863
+    - _FrontLight: 0.808
     - _GradiantSaturation: 1.52
+    - _LightColorEffect: 0.985
     - _MaxOutline: 0.05
     - _Metallic: 0.236
+    - _RampDistribution: 0.15
     - _Roughness: 0.252
     - _ShadowDarkness: 0.276
-    - _SpecularIntensity: 0.3
+    - _ShadowIntensity: 0.425
+    - _SpecularIntensity: 0.17
     - _StencilComp: 8
     - _StencilOp: 0
     - _StencilWriteValue: 0
     m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _FringeShadowColor: {r: 1, g: 1, b: 1, a: 1}
     - _GradiantColor: {r: 2.1159735, g: 2.1159735, b: 2.1159735, a: 0.22745098}
+    - _GradientColor: {r: 0.48235294, g: 0.105882354, b: 0.105882354, a: 1}
     - _HairCol: {r: 1.2283189, g: 0.9848053, b: 0.5851897, a: 1}
     - _HairCol1: {r: 1.3056108, g: 0.6374091, b: 0.48652476, a: 0.9019608}
     - _HairCol2: {r: 1, g: 1, b: 1, a: 1}
-    - _ShadowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ShadowColor: {r: 0.6509804, g: 0.6509804, b: 0.6509804, a: 1}
     - _SpecularColor: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
   m_BuildTextureStacks: []

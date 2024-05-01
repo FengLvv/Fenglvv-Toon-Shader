@@ -45,75 +45,82 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\GF3\Feature\URPOpaqueTextureToggler.cs" />
+     <Compile Include="Assets\GF3\Scripts\SmoothMesh.cs" />
+     <Compile Include="Assets\SimpleVertexPainter\SimpleVertexPainter\Runtime\SVTXPainterUtils.cs" />
+     <Compile Include="Assets\GF3\Scripts\Feature\BlitTex.cs" />
      <Compile Include="Assets\FreeFlyCamera\Demo\Scripts\ToggleGameObjectEnable.cs" />
-     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\GF3\Demo\ScaleDown.cs" />
      <Compile Include="Assets\AddHappy.cs" />
+     <Compile Include="Assets\SimpleVertexPainter\SimpleVertexPainter\Runtime\SVTXObject.cs" />
      <Compile Include="Assets\GF3\Demo\move.cs" />
-     <Compile Include="Assets\GF3\Feature\DrawFringeEyebrowFeature.cs" />
-     <Compile Include="Assets\GF3\Feature\BlitTex.cs" />
+     <Compile Include="Assets\GF3\Scripts\Feature\URPOpaqueTextureToggler.cs" />
      <Compile Include="Assets\FreeFlyCamera\Scripts\FreeFlyCamera.cs" />
+     <Compile Include="Assets\GF3\Scripts\EyeAnchor.cs" />
      <Compile Include="Assets\GF3\Demo\SetBlendShape.cs" />
+     <Compile Include="Assets\GF3\Scripts\SingleShadow.cs" />
      <Compile Include="Assets\GF3\Demo\PlaygroundCam.cs" />
+     <Compile Include="Assets\GF3\Scripts\Feature\DrawFringeEyebrowFeature.cs" />
      <Folder Include="Assets" />
-     <None Include="Assets\GF3\Materials\GF_OUTLINE.shader" />
+     <None Include="Assets\GF3\Model\GF_OUTLINE.shader" />
      <Folder Include="Assets\Settings" />
      <Folder Include="Assets\Fantasy Skybox FREE\Panoramics" />
+     <Folder Include="Assets\Polybrush Data\Brush Settings" />
+     <None Include="Assets\GF3\Materials\GF_BROW.shader" />
      <Folder Include="Assets\GF3\Demo\Mat" />
      <Folder Include="Assets\Fantasy Skybox FREE\Panoramics\FS013" />
-     <Folder Include="Assets\GF3\Materials\old version" />
-     <None Include="Assets\GF3\Materials\old version\GF_Basic.shader" />
+     <Folder Include="Assets\SmoothNormalTools" />
+     <Folder Include="Assets\SimpleVertexPainter\SimpleVertexPainter" />
+     <Folder Include="Assets\SimpleVertexPainter\SimpleVertexPainter\Runtime\Shaders" />
      <None Include="Assets\Fantasy Skybox FREE\Readme.txt" />
+     <Folder Include="Assets\GF3\Scripts" />
      <Folder Include="Assets\FreeFlyCamera\Demo\Scenes" />
      <None Include="Assets\MyMaterial\Repo\PBR.hlsl" />
      <None Include="Assets\GF3\Demo\Mat\Receive Shadow.shader" />
      <Folder Include="Assets\Fantasy Skybox FREE\Cubemaps\FS002" />
+     <Folder Include="Assets\SimpleVertexPainter\SimpleVertexPainter\Demo" />
      <Folder Include="Assets\Fantasy Skybox FREE\Cubemaps" />
      <Folder Include="Assets\FreeFlyCamera" />
      <None Include="Assets\Fantasy Skybox FREE\ReleaseNotes.txt" />
+     <None Include="Assets\SimpleVertexPainter\SimpleVertexPainter\Runtime\Shaders\Vertex Color.shader" />
      <None Include="Assets\MyMaterial\Repo\BLENDCOLOR.hlsl" />
      <None Include="Assets\GF3\Materials\GF_INLINE.shader" />
      <None Include="Assets\GF3\Materials\GF_FACE.shader" />
+     <Folder Include="Assets\GF3\Demo\NeverGonna" />
      <Folder Include="Assets\GF3\Model" />
-     <None Include="Assets\GF3\Materials\old version\GFInclude.hlsl" />
      <Folder Include="Assets\FreeFlyCamera\Demo" />
      <None Include="Assets\GF3\Materials\GF_HAIR_BACK.shader" />
-     <None Include="Assets\GF3\Materials\old version\GF_Eyebrows.shader" />
      <Folder Include="Assets\Fantasy Skybox FREE\Cubemaps\FS013\Images" />
+     <Folder Include="Assets\Polybrush Data\Color Palette" />
      <Folder Include="Assets\FreeFlyCamera\Demo\Scripts" />
-     <Folder Include="Assets\MyMaterial\skybox" />
      <Folder Include="Assets\GF3\textures" />
      <Folder Include="Assets\FreeFlyCamera\Documentation" />
      <Folder Include="Assets\Fantasy Skybox FREE\Cubemaps\FS013" />
      <Folder Include="Assets\Fantasy Skybox FREE\Cubemaps\FS017\Images" />
      <None Include="Assets\FreeFlyCamera\readme.txt" />
+     <Folder Include="Assets\SimpleVertexPainter" />
      <Folder Include="Assets\GF3" />
      <None Include="Assets\GF3\Materials\GF_HAIR_FRONT.shader" />
      <Folder Include="Assets\Fantasy Skybox FREE\Panoramics\FS002" />
-     <Folder Include="Assets\Script" />
+     <Folder Include="Assets\GF3\Resources" />
      <Folder Include="Assets\Fantasy Skybox FREE\Panoramics\FS003" />
      <Folder Include="Assets\Fantasy Skybox FREE\Cubemaps\Classic" />
+     <None Include="Assets\GF3\Materials\TOONFUNCTIONS.hlsl" />
      <Folder Include="Assets\MyMaterial\Repo" />
      <None Include="Assets\GF3\Materials\GF_EYEBLEND.shader" />
-     <Folder Include="Assets\TutorialInfo\Scripts" />
-     <Folder Include="Assets\TutorialInfo\Icons" />
      <Folder Include="Assets\Fantasy Skybox FREE\Panoramics\FS017" />
-     <Folder Include="Assets\TutorialInfo" />
      <Folder Include="Assets\GF3\Demo\SampleScene" />
      <Folder Include="Assets\MyMaterial" />
-     <None Include="Assets\GF3\Materials\old version\GF_Fringe.shader" />
+     <Folder Include="Assets\Polybrush Data" />
      <Folder Include="Assets\Fantasy Skybox FREE\Cubemaps\FS002\Images" />
      <Folder Include="Assets\GF3\Demo" />
-     <None Include="Assets\GF3\Materials\GF_BROW.shader" />
      <None Include="Assets\GF3\Materials\BLENDCOLOR.hlsl" />
      <Folder Include="Assets\GF3\Materials" />
+     <None Include="Assets\GF3\Materials\VertCol.shader" />
      <None Include="Assets\GF3\Materials\GFBasic.hlsl" />
      <None Include="Assets\MyMaterial\Repo\MYTOONSHADER.hlsl" />
-     <Folder Include="Assets\GF3\Feature" />
+     <Folder Include="Assets\GF3\Scripts\Feature" />
      <Folder Include="Assets\Fantasy Skybox FREE\Cubemaps\FS017" />
      <Folder Include="Assets\Fantasy Skybox FREE\Scenes" />
-     <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\Fantasy Skybox FREE\Scenes\Demo with terrain" />
      <Folder Include="Assets\Fantasy Skybox FREE" />
      <None Include="Assets\GF3\Materials\GF_EYE.shader" />
@@ -122,8 +129,9 @@
      <Folder Include="Assets\FreeFlyCamera\Demo\Materials" />
      <Folder Include="Assets\Resources" />
      <Folder Include="Assets\Fantasy Skybox FREE\Cubemaps\FS003" />
+     <Folder Include="Assets\SimpleVertexPainter\SimpleVertexPainter\Runtime" />
      <Folder Include="Assets\Fantasy Skybox FREE\Cubemaps\FS003\Images" />
-     <Folder Include="Assets\SmoothNormalTools" />
+     <Folder Include="Assets\Polybrush Data\Prefab Palette" />
      <Folder Include="Assets\GF3\anim" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -385,6 +393,15 @@
      </Reference>
      <Reference Include="Mono.Cecil">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Android.Types">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Android.Gradle">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Android.GradleProject">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.GradleProject.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -764,8 +781,14 @@
      <Reference Include="Unity.Burst.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.ProBuilder.AddOns.Editor">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Rider.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Formats.Fbx.Runtime">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Formats.Fbx.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Core.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
@@ -776,11 +799,17 @@
      <Reference Include="Unity.Mathematics.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Polybrush.Editor">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Polybrush.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Collections">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Formats.Fbx.Editor">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Formats.Fbx.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Collections.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Collections.Editor.dll</HintPath>
@@ -793,6 +822,9 @@
      </Reference>
      <Reference Include="Unity.Recorder">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VSCode.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
@@ -814,6 +846,9 @@
      </Reference>
      <Reference Include="Unity.Burst">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.ProBuilder">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.ProBuilder.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
@@ -848,14 +883,26 @@
      <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Polybrush">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Polybrush.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Timeline">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.ProBuilder.Editor">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Autodesk.Fbx">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Autodesk.Fbx.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualScripting.State.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Autodesk.Fbx.Editor">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Autodesk.Fbx.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Mathematics">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>

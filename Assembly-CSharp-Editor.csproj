@@ -45,8 +45,10 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
-     <Folder Include="Assets\TutorialInfo\Scripts\Editor" />
+     <Compile Include="Assets\SimpleVertexPainter\SimpleVertexPainter\Editor\RxLookingGlass.cs" />
+     <Compile Include="Assets\SimpleVertexPainter\SimpleVertexPainter\Editor\SVTXObjectEditor.cs" />
+     <Compile Include="Assets\SimpleVertexPainter\SimpleVertexPainter\Editor\SVTXPainterWindow.cs" />
+     <Folder Include="Assets\SimpleVertexPainter\SimpleVertexPainter\Editor" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -305,6 +307,9 @@
      <Reference Include="UnityEditor.WebGL.Extensions">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\PlaybackEngines\WebGLSupport\UnityEditor.WebGL.Extensions.dll</HintPath>
      </Reference>
+     <Reference Include="UnityEditor.Android.Extensions">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\PlaybackEngines\AndroidPlayer\UnityEditor.Android.Extensions.dll</HintPath>
+     </Reference>
      <Reference Include="UnityEditor.WindowsStandalone.Extensions">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
      </Reference>
@@ -346,6 +351,15 @@
      </Reference>
      <Reference Include="nunit.framework">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Android.Types">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Android.Gradle">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Android.GradleProject">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.GradleProject.dll</HintPath>
      </Reference>
      <Reference Include="mscorlib">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\mscorlib.dll</HintPath>
@@ -740,8 +754,14 @@
      <Reference Include="Unity.Burst.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.ProBuilder.AddOns.Editor">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Rider.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Formats.Fbx.Runtime">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Formats.Fbx.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Core.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
@@ -752,11 +772,17 @@
      <Reference Include="Unity.Mathematics.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Polybrush.Editor">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Polybrush.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Collections">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Formats.Fbx.Editor">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Formats.Fbx.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Collections.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Collections.Editor.dll</HintPath>
@@ -769,6 +795,9 @@
      </Reference>
      <Reference Include="Unity.Recorder">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VSCode.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
@@ -790,6 +819,9 @@
      </Reference>
      <Reference Include="Unity.Burst">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.ProBuilder">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.ProBuilder.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
@@ -824,14 +856,26 @@
      <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Polybrush">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Polybrush.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Timeline">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.ProBuilder.Editor">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Autodesk.Fbx">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Autodesk.Fbx.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualScripting.State.Editor">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Autodesk.Fbx.Editor">
+     <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Autodesk.Fbx.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Mathematics">
      <HintPath>E:\Study\Unity Study\SRP Study\Girl Frontier\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>

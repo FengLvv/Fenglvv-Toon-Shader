@@ -52,20 +52,20 @@ Material:
     m_Floats:
     - _AlphaTestToggle: 0
     - _CHANGEOUTLINE: 1
-    - _ColorAdjust: 0.678
+    - _ColorAdjust: 0
     - _DichotomyRange: 0.0169
     - _DichotomyThreshold: 0.444
-    - _DisneyDiffuseMergeRatio: 0.308
-    - _EnvDif: 0.121
-    - _EnvSpec: 0.496
-    - _FrontLight: 0.593
+    - _DisneyDiffuseMergeRatio: 0.107
+    - _EnvDif: 7.51
+    - _EnvSpec: 0
+    - _FrontLight: 0.426
     - _GradiantSaturation: 0.86
-    - _LightColorEffect: 1
+    - _LightColorEffect: 0.508
     - _MaxOutline: 0.05
-    - _Metallic: 0.038
-    - _Roughness: 0.25
-    - _ShadowDarkness: 0.72
-    - _SpecularIntensity: 2.06
+    - _Metallic: 0
+    - _Roughness: 1
+    - _ShadowDarkness: 0.534
+    - _SpecularIntensity: 10
     - _StencilComp: 8
     - _StencilOp: 2
     - _StencilWriteValue: 251
@@ -73,6 +73,6 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _GradiantColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ShadowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

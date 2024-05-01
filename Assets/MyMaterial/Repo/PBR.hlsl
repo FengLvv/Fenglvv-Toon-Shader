@@ -15,11 +15,11 @@ real BTDFDisney(float3 normal, float3 viewDirWS, float3 lightDirWS, half percept
 {
     float3 N = normal;
     float3 V = viewDirWS;
-    float3 L = lightDirWS;
+    float3 L = -lightDirWS;
     float3 H = normalize(V + L);
-    float NdotV = max(saturate(dot(N, V)), 0.000001);
-    float NdotL = max(saturate(dot(N, L)), 0.000001);
-    float LdotV = max(saturate(dot(H, V)), 0.000001);
+    float NdotV = max(dot(N, V),0.01);
+    float NdotL = max(dot(N, L),0.01);
+    float LdotV = max(dot(L, V),0.01);
 
     real fd90 = 0.5 + (perceptualRoughness + perceptualRoughness * LdotV);
     // Two schlick fresnel term
@@ -91,15 +91,15 @@ real3 CalculatePBR_Direct(float3 normalWS, float3 lightDirWS, float3 viewDirWS, 
     float3 H = normalize(V + L);
     float NdotL = max(saturate(dot(N, L)), 0.000001);
     float VdotH = max(saturate(dot(V, H)), 0.000001);
-    float3 brdf = CalculateBRDF(normalWS, lightDirWS, viewDirWS, roughness, albedo, metallic);
-    float3 specColor = saturate(MYPI * lightCol * brdf * NdotL);
+    float3 specular = CalculateBRDF(normalWS, lightDirWS, viewDirWS, roughness, albedo, metallic);
 
     float3 F = BRDF_F(albedo, metallic, VdotH);
     float kd = (1 - length(F)) * (1 - metallic);
-    float3 diffColor = kd * lightCol * NdotL * albedo;
-    //直接光部分之和
-    float3 DirectLightResult = diffColor + specColor;
-    return DirectLightResult;
+    float3 diffColor = kd * albedo;
+
+    float3 result = (diffColor + specular) * lightCol * NdotL;
+
+    return result;
 }
 
 //立方体贴图的Mip等级计算

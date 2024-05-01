@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 3R2_GF_BROW
-  m_Shader: {fileID: 4800000, guid: cb603127ed70a8e488a8229d100a5b39, type: 3}
+  m_Shader: {fileID: 4800000, guid: 513d4923ca4d78e459ad39c6a3530a3c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -41,25 +41,28 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaTestToggle: 0
     - _ColorAdjust: 1
     - _DichotomyRange: 0.02
     - _DichotomyThreshold: 0.57
     - _DisneyDiffuseMergeRatio: 0.5
-    - _EnvDif: 0.5
+    - _EnvDif: 2.84
     - _EnvSpec: 0.5
     - _FrontLight: 0.5
     - _GradiantSaturation: 0.5
-    - _LightColorEffect: 1
+    - _LightColorEffect: 0.547
     - _MaxOutline: 0.05
     - _Metallic: 0
     - _Roughness: 1
-    - _ShadowDarkness: 0.5
+    - _ShadowDarkness: 0.187
     - _SpecularIntensity: 1
     - _StencilComp: 4
+    - _StencilCompareValue: 4.62
     - _StencilOp: 0
     - _StencilWriteValue: 250
     - _ZTest: 8
     m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _GradiantColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}

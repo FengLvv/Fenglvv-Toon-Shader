@@ -46,24 +46,29 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AOIntensity: 1
+    - _AOIntensity: 0.538
     - _AlphaTestToggle: 0
     - _ColorAdjust: 0.824
     - _Cutoff: 0.5
-    - _DichotomyRange: 0.0113
+    - _DichotomyRange: 0.0468
     - _DichotomyThreshold: 0.5
-    - _DisneyDiffuseMergeRatio: 0.276
+    - _DisneyDiffuseMergeRatio: 1
     - _EnvDif: 0.32
+    - _EnvDistribution: 5.14
     - _EnvSpec: 0.177
-    - _FrontLight: 0.619
+    - _FrontLight: 0.815
     - _GradiantSaturation: 2
-    - _LightColorEffect: 1
+    - _LightColorEffect: 0.733
     - _MaxOutline: 0.05
+    - _RampDistribution: 1
     - _ShadowDarkness: 0.479
+    - _ShadowIntensity: 0.5
     - _SpecularIntensity: 1.26
+    - _SpecularRatio: 0.484
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _GradiantColor: {r: 6.9044013, g: 4.657214, b: 4.657214, a: 0.16470589}
-    - _ShadowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _GradientColor: {r: 1.509434, g: 0.9172286, b: 0.2919188, a: 1}
+    - _ShadowColor: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

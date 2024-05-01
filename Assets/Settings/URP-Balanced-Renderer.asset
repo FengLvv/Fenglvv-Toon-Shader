@@ -46,12 +46,14 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 64
     outlineShader: {fileID: 4800000, guid: 60e09d091597f9241a54e53735fe9149, type: 3}
-    outlineWidth: 0.00264
+    outlineWidth: 0.00507
+    outlineCol: {r: 0.20784314, g: 0.16078432, b: 0.1254902, a: 0}
     InlineLayer:
       serializedVersion: 2
       m_Bits: 64
+    InlineAttenuation: 0.337
     inlineShader: {fileID: 4800000, guid: 95ab4cc7727928940bed04ada7d940fa, type: 3}
-    inlineWidth: 0.0046
+    inlineWidth: 0.0051
 --- !u!114 &-1878332245247344467
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -63,6 +63,7 @@ Shader "3R2/GF/EYEBLEND"
         color.w = baseMap.w;  
     
         //阴影
+//        return 0;
         return float4(color);
     }
     ENDHLSL

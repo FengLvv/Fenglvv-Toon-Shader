@@ -131,17 +131,6 @@ float3 sampleSDFNose(Texture2D SDF, SamplerState sdfSampler, float2 uv, float3 l
 }
 
 /**************************************预制的结构体****************************************************/
-struct AttributeOutline {
-    float4 positionOS : POSITION;
-    float3 normalOS : NORMAL;
-    float4 color : COLOR;
-    float4 tangentOS : TANGENT;
-};
-
-struct VaryingsOutline {
-    float4 positionHCS : SV_POSITION;
-    float3 positionVS  : TEXCOORD0;
-};
 
 
 

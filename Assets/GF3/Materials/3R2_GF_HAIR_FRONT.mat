@@ -32,6 +32,14 @@ Material:
         m_Texture: {fileID: 2800000, guid: 36c809ec9d68b05458a21e00f4c91433, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RMO:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Ramp:
         m_Texture: {fileID: 2800000, guid: aedfb7abf1995b2499a1b11863c78013, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -42,21 +50,28 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AOIntensity: 0.5
     - _AlphaTestToggle: 0
-    - _ColorAdjust: 0.783
-    - _DichotomyRange: 0.0078
-    - _DichotomyThreshold: 0.56
+    - _ColorAdjust: 1
+    - _Cutoff: 0.5
+    - _DichotomyRange: 0.237
+    - _DichotomyThreshold: 0.716
     - _DisneyDiffuseMergeRatio: 0.132
     - _EnvDif: 0.29
+    - _EnvDistribution: 3.69
     - _EnvSpec: 0.522
     - _FringeShadowWidth: 0.641
-    - _FrontLight: 0.706
+    - _FrontLight: 1
     - _GradiantSaturation: 1.11
+    - _LightColorEffect: 0.985
     - _MaxOutline: 0.05
-    - _Metallic: 0
+    - _Metallic: 0.023
+    - _RampDistribution: 0.15
     - _Roughness: 1
     - _ShadowDarkness: 0.429
+    - _ShadowIntensity: 0.425
     - _SpecularIntensity: 3.92
+    - _SpecularRatio: 0.5
     - _StencilComp: 8
     - _StencilOp: 2
     - _StencilReadShadow: 251
@@ -66,6 +81,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _FringeShadowColor: {r: 0.13207543, g: 0.36036485, b: 0.5283019, a: 0.5176471}
     - _GradiantColor: {r: 2.7002478, g: 1.5161186, b: 0.9298023, a: 0.5411765}
-    - _ShadowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _GradientColor: {r: 0.4811321, g: 0.10666607, b: 0.10666607, a: 1}
+    - _ShadowColor: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

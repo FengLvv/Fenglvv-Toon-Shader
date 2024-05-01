@@ -54,40 +54,45 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AOIntensity: 0.829
+    - _AOIntensity: 1
     - _AlphaTestToggle: 0
     - _CHANGEOUTLINE: 1
     - _ColorAdjust: 0.194
     - _Cutoff: 0.5
-    - _DichotomyRange: 0.05
+    - _DichotomyRange: 0.02
     - _DichotomyThreshold: 0.5
-    - _DisneyDiffuseMergeRatio: 0.716
+    - _DisneyDiffuseMergeRatio: 1
     - _EnvDif: 0.274
+    - _EnvDistribution: 6.51
     - _EnvSpec: 0.317
     - _FringeShadowWidth: 0.5
-    - _FrontLight: 0.14
+    - _FrontLight: 0.97
     - _GlossyExp: 10
     - _GradiantSaturation: 1.22
     - _HonmuraLine: 0.5
     - _InnerLine: 0.5
-    - _LightColorEffect: 1
+    - _LightColorEffect: 0.618
     - _MaxOutline: 0.05
     - _OutlineWidth: 0.01
     - _PBREven: 0.5
     - _PBRMergeRatio: 0.5
     - _Part: 0
+    - _RampDistribution: 1.04
     - _Rim: 0.5
     - _RimIntensity: 1
-    - _ShadowDarkness: 0.129
+    - _ShadowDarkness: 0.417
+    - _ShadowIntensity: 1
     - _ShadowRim: 0.5
     - _SpecularIntensity: 7.43
+    - _SpecularRatio: 1
     - _StencilOp: 0
     - _StencilWriteValue: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _FringeShadowColor: {r: 0, g: 0, b: 0, a: 1}
     - _GradiantColor: {r: 0.32907617, g: 0.8207547, b: 0.75656766, a: 0}
+    - _GradientColor: {r: 0.5283019, g: 0.18191527, b: 0.18191527, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ShadowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ShadowColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
     - _SpecularColor: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
   m_BuildTextureStacks: []
